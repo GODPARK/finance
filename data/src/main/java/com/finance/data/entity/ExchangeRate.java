@@ -27,6 +27,17 @@ public class ExchangeRate {
     @Column(name = "currency_price")
     private double currencyPrice;
 
+    @Column(name = "standard_date")
+    private Date standardDate;
+
     @Column(name = "update_date")
     private Date updateDate;
+
+    @NotBlank
+    @Column(name = "from_data")
+    private String fromData;
+
+    @NotNull
+    @Transient
+    private long timestamp;
 }

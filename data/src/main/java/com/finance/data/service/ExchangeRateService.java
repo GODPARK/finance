@@ -18,6 +18,8 @@ public class ExchangeRateService {
         ExchangeRate newExchangeRate = ExchangeRate.builder()
                 .currencyCode(exchangeRate.getCurrencyCode().toUpperCase(Locale.ROOT))
                 .currencyPrice(exchangeRate.getCurrencyPrice())
+                .standardDate(new Date(exchangeRate.getTimestamp()*1000L))
+                .fromData(exchangeRate.getFromData())
                 .updateDate(new Date())
                 .build();
         return exchangeRateRepository.save(newExchangeRate);
