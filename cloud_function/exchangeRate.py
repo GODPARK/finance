@@ -54,7 +54,7 @@ def get_exchange_investing_crawling():
 
 def main():
     final_return_value = {
-        'payload': 'get_exchange_data(USD)'
+        'payload': 'get_exchange_data'
     }
 
     freefore_check_status, freefore_currency_code, freefore_currency_price, freefore_timestamp = get_exchange_freeforex_api()

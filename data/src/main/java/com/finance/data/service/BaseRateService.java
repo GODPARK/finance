@@ -19,6 +19,7 @@ public class BaseRateService {
                 .countryCode(baseRate.getCountryCode().toUpperCase(Locale.ROOT))
                 .rate(baseRate.getRate())
                 .standardDate(new Date(baseRate.getTimestamp()*1000L))
+                .fromData(baseRate.getFromData())
                 .updateDate(new Date())
                 .build();
         return baseRateRepository.save(newBaseRate);

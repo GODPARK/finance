@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity @Table(name = "base_rate")
@@ -26,6 +25,10 @@ public class BaseRate {
     @NotNull
     @Column(name = "rate")
     private double rate;
+
+    @NotBlank
+    @Column(name = "from_data")
+    private String fromData;
 
     @Column(name = "standard_date")
     private Date standardDate;
