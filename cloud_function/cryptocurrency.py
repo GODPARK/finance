@@ -39,7 +39,7 @@ def get_crypto_currency_price(crypto_code):
 
 def main():
     final_return_value = {
-        'payload': 'get_base_rate'
+        'payload': 'get_cryptocurrency'
     }
     crypto_code_list = ['BTC', 'ETH']
 
