@@ -3,7 +3,7 @@ import json
 
 
 def save_data(request_body):
-    url = "http://finance.godpark.pe.kr/api/cryptocurrency"
+    url = "http://localhost:9090/api/cryptocurrency"
     headers = {
         'Content-Type': 'application/json',
         'api_token': 'Pvk4coiwHqt3ZqQ8SfJD!'

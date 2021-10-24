@@ -97,9 +97,9 @@ def main(args):
     if len(samsung_data) > 0:
         samsung_request_body = make_request_body(
             samsung_name,
-            kospi_data[0],
+            samsung_data[0],
             TARGET_CRAWLING_SETTING['samsung']['from'],
-            kospi_data[1]
+            samsung_data[1]
         )
         if save_data(samsung_request_body):
             final_return_value[samsung_name] = 'success'
