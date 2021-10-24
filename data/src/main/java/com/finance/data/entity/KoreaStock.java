@@ -17,9 +17,11 @@ public class KoreaStock {
     @Column(name = "korea_stock_seq")
     private long koreaStockSeq;
 
+    @NotBlank
     @Column(name = "stock_code")
     private String stockCode;
 
+    @NotNull
     @Column(name = "stock_price")
     private double stockPrice;
 
