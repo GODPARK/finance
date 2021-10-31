@@ -24,17 +24,6 @@ def make_request_body(currency_code, currency_price, from_data, timestamp):
         "timestamp": timestamp
     }
 
-def get_exchange_freeforex_api():
-    url = "https://www.freeforexapi.com/api/live?pairs=USDKRW"
-    get_response = requests.get(url=url)
-    if get_response.status_code == 200:
-        result_data = get_response.json()
-        if result_data['code'] != 200:
-            return False, 'USD', 0, 0
-        if result_data['rates'] and result_data['rates']['USDKRW']:
-            return True, 'USD', result_data['rates']['USDKRW']['rate'], result_data['rates']['USDKRW']['timestamp']
-    else:
-        return False, 'USD', 0, 0
 
 def get_exchange_investing_crawling():
     url = "https://kr.investing.com/currencies/usd-krw"
@@ -51,21 +40,10 @@ def get_exchange_investing_crawling():
         return False, 'USD', 0, 0
 
 
-
-def main():
+def main(args):
     final_return_value = {
         'payload': 'get_exchange_data'
     }
-
-    freefore_check_status, freefore_currency_code, freefore_currency_price, freefore_timestamp = get_exchange_freeforex_api()
-    if freefore_check_status:
-        freefore_request_body = make_request_body(freefore_currency_code, freefore_currency_price, 'FREEFOREX', freefore_timestamp)
-        if save_data(freefore_request_body):
-            final_return_value['FREEFOREX'] = 'success'
-        else:
-            final_return_value['FREEFOREX'] = 'save error'
-    else:
-        final_return_value['FREEFOREX'] = 'call error'
 
     investing_check_status, investing_currency_code, investing_currency_price, investing_timestamp = get_exchange_investing_crawling()
     if investing_check_status:
@@ -79,4 +57,4 @@ def main():
 
     return final_return_value
 
-print(main())
+print(main(0))

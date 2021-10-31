@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.finance'
-version = '0.0.4-SNAPSHOT'
+version = '0.0.5-SNAPSHOT'
 sourceCompatibility = '11'
 
 configurations {
@@ -24,6 +24,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation group: 'mysql', name: 'mysql-connector-java'
+	implementation 'com.slack.api:slack-api-client:1.13.0'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -45,7 +45,7 @@ def main():
 
     for crypto_code in crypto_code_list:
         api_result_status, min_price, max_price, timestamp = get_crypto_currency_price(crypto_code)
-        if api_result_status:
+        if api_result_status and min_price > 0 and max_price > 0:
             api_body = make_request_body(
                 crypto_code=crypto_code,
                 min_price=min_price,
